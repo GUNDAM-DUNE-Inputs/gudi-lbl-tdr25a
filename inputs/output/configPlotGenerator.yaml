@@ -1,0 +1,29 @@
+
+varDictionaries:
+  - name: "ReactionCode"
+    dictionary: "./inputs/output/dictionaries/ReactionCodesDict.yaml"
+
+histogramsDefinition:
+  - varToPlot: "Raw"
+
+  - varToPlot: "Raw"
+    splitVars: ["", "mode"]
+
+  - varToPlot: "Ev_reco_nue"
+    splitVars: ["", "mode"]
+    useSampleBinning: true
+    xTitle: "Reconstructed neutrino energy (GeV)"
+    yTitle: "Counts"
+
+  - varToPlot: "Ev_reco_numu"
+    splitVars: ["", "mode"]
+    useSampleBinning: true
+    xTitle: "Reconstructed neutrino energy (GeV)"
+    yTitle: "Counts"
+  
+canvasParameters:
+  height: 700
+  width: 1200
+  nbXplots: 3
+  nbYplots: 2
+
