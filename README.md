@@ -1,4 +1,4 @@
-# GUNDAM Inputs and Configuration for DUNE Long-baseline Neutrinos OA
+# GUNDAM Inputs and Configuration for DUNE Long-baseline Neutrino OA
 ## 0. Input files
 * **On NN home:**
 
