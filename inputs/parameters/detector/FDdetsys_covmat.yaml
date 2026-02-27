@@ -1,0 +1,541 @@
+---
+Systematics:
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 1.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: TotalEScaleFD
+      ParameterName: TotalEScaleFD
+    Error: 0.02
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 1.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: TotalEScaleSqrtFD
+      ParameterName: TotalEScaleSqrtFD
+    Error: 0.01
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 1.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: TotalEScaleInvSqrtFD
+      ParameterName: TotalEScaleInvSqrtFD
+    Error: 0.02
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 1.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: HadEScaleFD
+      ParameterName: HadEScaleFD
+    Error: 0.05
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 1.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: HadEScaleSqrtFD
+      ParameterName: HadEScaleSqrtFD
+    Error: 0.05
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 1.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: HadEScaleInvSqrtFD
+      ParameterName: HadEScaleInvSqrtFD
+    Error: 0.05
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 1.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: MuEScaleFD
+      ParameterName: MuEScaleFD
+    Error: 0.02
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 1.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: MuEScaleSqrtFD
+      ParameterName: MuEScaleSqrtFD
+    Error: 0.005
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 1.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: MuEScaleInvSqrtFD
+      ParameterName: MuEScaleInvSqrtFD
+    Error: 0.02
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 1.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: NEScaleFD
+      ParameterName: NEScaleFD
+    Error: 0.2
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 1.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: NEScaleSqrtFD
+      ParameterName: NEScaleSqrtFD
+    Error: 0.3
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 1.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: NEScaleInvSqrtFD
+      ParameterName: NEScaleInvSqrtFD
+    Error: 0.3
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 1.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: EMEScaleFD
+      ParameterName: EMEScaleFD
+    Error: 0.025
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 1.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: EMEScaleSqrtFD
+      ParameterName: EMEScaleSqrtFD
+    Error: 0.025
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 1.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: EMEScaleInvSqrtFD
+      ParameterName: EMEScaleInvSqrtFD
+    Error: 0.025
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 1.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: AbsoluteEResFD
+      ParameterName: AbsoluteEResFD
+    Error: 0.1
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 1.0
+    - NueFVFD: 0.0
+    Names:
+      FancyName: NumuFVFD
+      ParameterName: NumuFVFD
+    Error: 0.01
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
+
+- Systematic:
+    Correlations:
+    - TotalEScaleFD: 0.0
+    - TotalEScaleSqrtFD: 0.0
+    - TotalEScaleInvSqrtFD: 0.0
+    - HadEScaleFD: 0.0
+    - HadEScaleSqrtFD: 0.0
+    - HadEScaleInvSqrtFD: 0.0
+    - MuEScaleFD: 0.0
+    - MuEScaleSqrtFD: 0.0
+    - MuEScaleInvSqrtFD: 0.0
+    - NEScaleFD: 0.0
+    - NEScaleSqrtFD: 0.0
+    - NEScaleInvSqrtFD: 0.0
+    - EMEScaleFD: 0.0
+    - EMEScaleSqrtFD: 0.0
+    - EMEScaleInvSqrtFD: 0.0
+    - AbsoluteEResFD: 0.0
+    - NumuFVFD: 0.0
+    - NueFVFD: 1.0
+    Names:
+      FancyName: NueFVFD
+      ParameterName: NueFVFD
+    Error: 0.01
+    ParameterBounds:
+    - -10.0
+    - 10.0
+    ParameterValues:
+      PreFitValue: 0.0
