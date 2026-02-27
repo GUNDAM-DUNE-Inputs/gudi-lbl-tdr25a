@@ -1382,6 +1382,24 @@
 # FD Detector systematics
 #########################################################################
 
+- name: "FD detector Systematics"
+  isEnabled: true
+  enableThrowToyParameters: false
+  enablePca: true
+
+  #nominalStepSize: 0.1
+
+  # Decompose the cov matrix
+  parameterDefinitionFilePath: "./inputs/parameters/detector/FDdetector_covariance_DUNE_systs.root"
+  covarianceMatrixTMatrixD: det_cov
+  parameterNameList: det_param_names
+  parameterPriorValueList: det_param_prior
+  parameterLowerBoundsList: det_param_lb
+  parameterUpperBoundsList: det_param_ub
+  printDialSetSummary: true
+
+  parameterDefinitions:
+
     - name: "TotalEScaleFD"
       isEnabled: true
       dialSetDefinitions:
@@ -1528,260 +1546,17 @@
           dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
           dialsList:       "AbsoluteEResFD_graph" # TObjArray
 
-
-    - name: "CVNNumuFD"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "CVNNueFD"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
     - name: "NumuFVFD"
       isEnabled: true
       dialSetDefinitions:
         - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+          applyOnDataSets: [ "FD" ]
 
     - name: "NueFVFD"
       isEnabled: true
       dialSetDefinitions:
         - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "TotalEScaleND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "TotalEScaleSqrtND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "TotalEScaleInvSqrtND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "HadEScaleND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "HadEScaleSqrtND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "HadEScaleInvSqrtND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "MuEScaleND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "MuEScaleSqrtND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "MuEScaleInvSqrtND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "NEScaleND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "NEScaleSqrtND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "NEScaleInvSqrtND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "EMEScaleND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "EMEScaleSqrtND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "EMEScaleInvSqrtND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "HadResND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "MuResND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "NResND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "EMResND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "NumuFVND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "RecoNCND"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 0"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-
-# Cross-Section systematics (binned) EB parameters
-- name: "Cross-Section (binned) Systematics"
-  isEnabled: false
-
-  enablePca: true
-
-  parameterDefinitionFilePath: "./inputs/parameters/xsecBinned/OA2021_Eb_XSecBinParams_v7_fixAlpha_extendBounds_linearEb.root"
-  covarianceMatrix: xsec_bin_cov
-  parameterNameList: xsec_bin_param_name
-  parameterPriorValueList: xsec_bin_param_prior
-  parameterLowerBoundsList: xsec_bin_param_lb
-  parameterUpperBoundsList: xsec_bin_param_ub
-  printDialSetSummary: true
-
-  # Toy throwing properties
-  throwEnabledList: "xsec_bin_param_throw"
-
-  parameterDefinitions:
-    - name: "EB_bin_C_nu"
-      isEnabled: true
-      dialSetDefinitions:
-        - dialType: Graph
-          applyOnDataSets: [ "ND280" ]
-          minDialResponse: 0
-          maxDialResponse: 100
-          applyCondition: "[ReactionCode] == 1 && [TgtMat] == 12 && ([NeutrinoCode] == 12 || [NeutrinoCode] == 14)"
-          binningFilePath: "./inputs/parameters/xsecBinned/binning_EB_bin_C_nu_badBANFF.txt"
-          dialsFilePath:   "./inputs/parameters/xsecBinned/Eb_dials.root"
-          dialsList:       "EB_bin_C_nu_graphs" # TObjArray
-
-    - name: "EB_bin_C_nubar"
-      isEnabled: true
-      dialSetDefinitions:
-        - dialType: Graph
-          applyOnDataSets: [ "ND280" ]
-          minDialResponse: 0
-          maxDialResponse: 100
-          applyCondition: "[ReactionCode] == -1 && [TgtMat] == 12 && ([NeutrinoCode] == -12 || [NeutrinoCode] == -14)"
-          binningFilePath: "./inputs/parameters/xsecBinned/binning_EB_bin_C_nubar_badBANFF.txt"
-          dialsFilePath:   "./inputs/parameters/xsecBinned/Eb_dials.root"
-          dialsList:       "EB_bin_C_nubar_graphs" # TObjArray
-
-
-    - name: "EB_bin_O_nu"
-      isEnabled: true
-      dialSetDefinitions:
-        - dialType: Graph
-          applyOnDataSets: [ "ND280" ]
-          minDialResponse: 0
-          maxDialResponse: 100
-          applyCondition: "[ReactionCode] == 1 && [TgtMat] == 16 && ([NeutrinoCode] == 12 || [NeutrinoCode] == 14)"
-          binningFilePath: "./inputs/parameters/xsecBinned/binning_EB_bin_O_nu_badBANFF.txt"
-          dialsFilePath:   "./inputs/parameters/xsecBinned/Eb_dials.root"
-          dialsList:       "EB_bin_O_nu_graphs" # TObjArray
-
-    - name: "EB_bin_O_nubar"
-      isEnabled: true
-      dialSetDefinitions:
-        - dialType: Graph
-          applyOnDataSets: [ "ND280" ]
-          minDialResponse: 0
-          maxDialResponse: 100
-          applyCondition: "[ReactionCode] == -1 && [TgtMat] == 16 && ([NeutrinoCode] == -12 || [NeutrinoCode] == -14)"
-          binningFilePath: "./inputs/parameters/xsecBinned/binning_EB_bin_O_nubar_badBANFF.txt"
-          dialsFilePath:   "./inputs/parameters/xsecBinned/Eb_dials.root"
-          dialsList:       "EB_bin_O_nubar_graphs" # TObjArray
-
-    - name: "EB_alpha"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Graph
-          applyOnDataSets: [ "ND280" ]
-          minDialResponse: 0
-          maxDialResponse: 100
-          #binningFilePath: "./inputs/parameters/xsecBinned/binning_EB_alpha.txt"
-          dialsFilePath:   "./inputs/parameters/xsecBinned/Eb_dials.root"
-          dialsList:       "EB_alpha_graphs" # TObjArray
+          applyOnDataSets: [ "FD" ]
 
 # FDS
 #- name: FDS weight
