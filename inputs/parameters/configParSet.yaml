@@ -1383,7 +1383,7 @@
 #########################################################################
 
     - name: "TotalEScaleFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1394,7 +1394,7 @@
 #          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
 
     - name: "TotalEScaleSqrtFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1403,7 +1403,7 @@
           dialsList:       "TotalEScaleSqrtFD_graph" # TObjArray
 
     - name: "TotalEScaleInvSqrtFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1412,7 +1412,7 @@
           dialsList:       "TotalEScaleFDInvSqrt_graph" # TObjArray
 
     - name: "HadEScaleFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1421,7 +1421,7 @@
           dialsList:       "HadEScaleFD_graph" # TObjArray
 
     - name: "HadEScaleSqrtFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1430,7 +1430,7 @@
           dialsList:       "HadEScaleSqrtFD_graph" # TObjArray
 
     - name: "HadEScaleInvSqrtFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1439,7 +1439,7 @@
           dialsList:       "HadEScaleInvSqrtFD_graph" # TObjArray
 
     - name: "MuEScaleFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1448,7 +1448,7 @@
           dialsList:       "MuEScaleFD_graph" # TObjArray
 
     - name: "MuEScaleSqrtFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1457,7 +1457,7 @@
           dialsList:       "MuEScaleSqrtFD_graph" # TObjArray
 
     - name: "MuEScaleInvSqrtFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1466,7 +1466,7 @@
           dialsList:       "MuEScaleInvSqrtFD_graph" # TObjArray
 
     - name: "NEScaleFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1475,7 +1475,7 @@
           dialsList:       "NEScaleFD_graph" # TObjArray
 
     - name: "NEScaleSqrtFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1484,7 +1484,7 @@
           dialsList:       "NEScaleSqrtFD_graph" # TObjArray
 
     - name: "NEScaleInvSqrtFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1493,7 +1493,7 @@
           dialsList:       "NEScaleInvSqrtFD_graph" # TObjArray
 
     - name: "EMEScaleFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1502,7 +1502,7 @@
           dialsList:       "EMEScaleFD_graph" # TObjArray
 
     - name: "EMEScaleSqrtFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1511,7 +1511,7 @@
           dialsList:       "EMEScaleSqrtFD_graph" # TObjArray
 
     - name: "EMEScaleInvSqrtFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1520,7 +1520,7 @@
           dialsList:       "EMEScaleInvSqrtFD_graph" # TObjArray
 
     - name: "AbsoluteEResFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
@@ -1544,14 +1544,14 @@
 #          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
 
     - name: "NumuFVFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Normalization
           applyCondition: "isFD == 1"
 #          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
 
     - name: "NueFVFD"
-      isEnabled: false
+      isEnabled: true
       dialSetDefinitions:
         - dialType: Normalization
           applyCondition: "isFD == 1"
