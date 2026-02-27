@@ -1378,13 +1378,19 @@
           maxDialResponse: 100
           allowDialExtrapolation: true
 
-# ND and FD normalization parameters
+#########################################################################
+# FD Detector systematics
+#########################################################################
 
     - name: "TotalEScaleFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/propagator/parameters/xsecBinned/binning/binning_EB_bin_C_nu_oa2024.txt"
+          dialsFilePath:   "./inputs/propagator/parameters/xsecBinned/dials/Eb_dials_1D_OA2024_New_test_with_delta_knots.root"
+          dialsList:       "Eb_bin_C_nu_graph" # TObjArray
+
 #          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
 
     - name: "TotalEScaleSqrtFD"
