@@ -1387,137 +1387,147 @@
       dialSetDefinitions:
         - dialType: Graph
           applyOnDataSets: [ "FD" ]
-          binningFilePath: "./inputs/propagator/parameters/xsecBinned/binning/binning_EB_bin_C_nu_oa2024.txt"
-          dialsFilePath:   "./inputs/propagator/parameters/xsecBinned/dials/Eb_dials_1D_OA2024_New_test_with_delta_knots.root"
-          dialsList:       "Eb_bin_C_nu_graph" # TObjArray
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "TotalEScaleFD_graph" # TObjArray
 
 #          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
 
     - name: "TotalEScaleSqrtFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "TotalEScaleSqrtFD_graph" # TObjArray
 
     - name: "TotalEScaleInvSqrtFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "TotalEScaleFDInvSqrt_graph" # TObjArray
 
     - name: "HadEScaleFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "HadEScaleFD_graph" # TObjArray
 
     - name: "HadEScaleSqrtFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "HadEScaleSqrtFD_graph" # TObjArray
 
     - name: "HadEScaleInvSqrtFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "HadEScaleInvSqrtFD_graph" # TObjArray
 
     - name: "MuEScaleFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "MuEScaleFD_graph" # TObjArray
 
     - name: "MuEScaleSqrtFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "MuEScaleSqrtFD_graph" # TObjArray
 
     - name: "MuEScaleInvSqrtFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "MuEScaleInvSqrtFD_graph" # TObjArray
 
     - name: "NEScaleFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "NEScaleFD_graph" # TObjArray
 
     - name: "NEScaleSqrtFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "NEScaleSqrtFD_graph" # TObjArray
 
     - name: "NEScaleInvSqrtFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "NEScaleInvSqrtFD_graph" # TObjArray
 
     - name: "EMEScaleFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "EMEScaleFD_graph" # TObjArray
 
     - name: "EMEScaleSqrtFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "EMEScaleSqrtFD_graph" # TObjArray
 
     - name: "EMEScaleInvSqrtFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "EMEScaleInvSqrtFD_graph" # TObjArray
 
-    - name: "HadResFD"
+    - name: "AbsoluteEResFD"
       isEnabled: false
       dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
+        - dialType: Graph
+          applyOnDataSets: [ "FD" ]
+          binningFilePath: "./inputs/parameters/detector/binning_FDdetector_EScale.txt"
+          dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
+          dialsList:       "AbsoluteEResFD_graph" # TObjArray
 
-    - name: "MuResFD"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "NResFD"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
-
-    - name: "EMResFD"
-      isEnabled: false
-      dialSetDefinitions:
-        - dialType: Normalization
-          applyCondition: "isFD == 1"
-#          applyCondition: "TMath::Abs([ReactionCode]) == 1 && (0.25 <= [Q2] && [Q2] < 0.5) && ( [TgtMat] == 12 || [TgtMat] == 16 ) && ( TMath::Abs([NeutrinoCode]) == 14 || TMath::Abs([NeutrinoCode]) == 12 )"
 
     - name: "CVNNumuFD"
       isEnabled: false
