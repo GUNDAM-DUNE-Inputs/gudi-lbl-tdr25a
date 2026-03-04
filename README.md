@@ -9,7 +9,13 @@
 * **On dunegpvm:**
 
   ```bash
-  export OA_INPUT_FOLDER=/pnfs/dune/persistent/users/flynnguo/GUNDAM/OA-inputs/lbl/gudi-inputs/v3/
+  export OA_INPUT_FOLDER=/pnfs/dune/persistent/users/uyevarou/GUNDAM/OA-inputs/lbl/gudi-inputs/v5/
+  ```
+
+* **On seawulf:**
+
+  ```bash
+  export OA_INPUT_FOLDER=/gpfs/projects/McGrewGroup/uyevarou/gudi-inputs/lbl/v5/
   ```
 
 ## 1. Set Up the GUNDAM Environment ⚙️
