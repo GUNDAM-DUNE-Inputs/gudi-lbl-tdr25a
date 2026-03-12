@@ -1400,7 +1400,7 @@
 
   parameterDefinitions:
 
-    - name: "TotalEScaleFD"
+    - name: "TotalEScaleFD_numu"
       isEnabled: true
       dialSetDefinitions:
         - dialType: Graph
