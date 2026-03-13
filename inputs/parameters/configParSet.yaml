@@ -1427,7 +1427,7 @@
           applyOnDataSets: [ "FD" ]
           binningFilePath: "./inputs/parameters/detector/binning_FDdetsys_Erecnumu.txt"
           dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
-          dialsList:       "TotalEScaleFDInvSqrt_numu_graph" # TObjArray
+          dialsList:       "TotalEScaleInvSqrtFD_numu_graph" # TObjArray
 
     - name: "HadEScaleFD_numu"
       isEnabled: true
@@ -1577,7 +1577,7 @@
           applyOnDataSets: [ "FD" ]
           binningFilePath: "./inputs/parameters/detector/binning_FDdetsys_Erecnue.txt"
           dialsFilePath:   "./inputs/parameters/detector/FDdetector_EScale_dials.root"
-          dialsList:       "TotalEScaleFDInvSqrt_nue_graph" # TObjArray
+          dialsList:       "TotalEScaleInvSqrtFD_nue_graph" # TObjArray
 
     - name: "HadEScaleFD_nue"
       isEnabled: true
