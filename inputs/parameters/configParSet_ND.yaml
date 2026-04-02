@@ -3,7 +3,7 @@
 ####################################################################
 
 - name: "Oscillation Parameters"
-  isEnabled: true
+  isEnabled: false
   enableThrowToyParameters: false
   nominalStepSize: 1.0
   parameterDefinitionFilePath: "./inputs/parameters/oscProb/oscCovAveragedPdg24.root"
@@ -615,25 +615,54 @@
 # Each parameter represents a bin in true neutrino energy / flavor / FHC-RHC
 ########################################################################
 - name: "Flux Systematics"
+  isEnabled: false
+  nominalStepSize: 0.05
+
+  parameterDefinitions:
+
+  - name: "Flux_nue"
+    isEnabled: true
+    #priorValue: 0.1
+    priorType: Flat
+    parameterStepSize: 0.05
+    dialSetDefinitions:
+      - dialType: Normalization
+        applyCondition: "abs([iniNuFlavor]) == 12"
+
+  - name: "Flux_numu"
+    isEnabled: true
+    #priorValue: 0.1
+    priorType: Flat
+    parameterStepSize: 0.05
+    dialSetDefinitions:
+      - dialType: Normalization
+        applyCondition: "abs([iniNuFlavor]) == 14"
+
+
+########################################################################
+# Flux Systematics:
+# Each parameter represents a bin in true neutrino energy / flavor / FHC-RHC
+########################################################################
+- name: "Flux Systematics"
   isEnabled: true
   enableThrowToyParameters: false
   # The flux covariance is very close to singular.  Handle by finding
   # the eigen vectors and eliminating any vectors with an eigenvalue
   # that is effectively zero.  The small eigen values have an absolute
   # value of about 1E-14.
-  enableEigenDecomp: true
+  enableEigenDecomp: false
   eigenValueThreshold: 1E-12
-  useEigenDecompForThrows: true
+  useEigenDecompForThrows: false
 
   printDialSetSummary: true
 
-  parameterDefinitionFilePath: "./inputs/parameters/flux/flux_covariance_DUNE_systs_2023.root"
+  parameterDefinitionFilePath: "./inputs/parameters/flux/ND_flux_covariance_DUNE_systs_2023.root"
   covarianceMatrix: xsec_cov
   parameterPriorValueList: xsec_param_prior
 
   dialSetDefinitions:
     - applyOnDataSets: ["*"]
-      parametersBinningPath: "./inputs/parameters/flux/fluxBinning_DUNE.txt"
+      parametersBinningPath: "./inputs/parameters/flux/fluxBinning_DUNE_ND.txt"
       printDialSummary: true
 
 #########################################################################
@@ -641,7 +670,7 @@
 #########################################################################
 
 - name: "Cross-Section Systematics"
-  isEnabled: true
+  isEnabled: false
   enableThrowToyParameters: false
   enablePca: true
 

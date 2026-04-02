@@ -6,20 +6,20 @@ varDictionaries:
 histogramsDefinition:
   - varToPlot: "Raw"
 
-  - varToPlot: "Raw"
-    splitVars: ["", "mode"]
+  #- varToPlot: "Raw"
+  #  splitVars: ["", "mcMode"]
 
-  - varToPlot: "Ev_reco_nue"
-    splitVars: ["", "mode"]
-    useSampleBinning: true
-    xTitle: "Reconstructed neutrino energy (GeV)"
-    yTitle: "Counts"
+  #- varToPlot: "recoEnu_nue"
+  #  splitVars: ["", "mcMode"]
+  #  useSampleBinning: true
+  #  xTitle: "Reconstructed neutrino energy (GeV)"
+  #  yTitle: "Counts"
 
-  - varToPlot: "Ev_reco_numu"
-    splitVars: ["", "mode"]
-    useSampleBinning: true
-    xTitle: "Reconstructed neutrino energy (GeV)"
-    yTitle: "Counts"
+  #- varToPlot: "recoEnu_numu"
+  #  splitVars: ["", "mcMode"]
+  #  useSampleBinning: true
+  #  xTitle: "Reconstructed neutrino energy (GeV)"
+  #  yTitle: "Counts"
   
 canvasParameters:
   height: 700
