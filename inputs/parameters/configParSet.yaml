@@ -1548,6 +1548,7 @@
 
     - name: "NumuFVFD"
       isEnabled: true
+      priorValue: 1
       dialSetDefinitions:
         - dialType: Normalization
           applyOnDataSets: [ "FD" ]
@@ -1698,6 +1699,7 @@
 
     - name: "NueFVFD"
       isEnabled: true
+      priorValue: 1
       dialSetDefinitions:
         - dialType: Normalization
           applyOnDataSets: [ "FD" ]
