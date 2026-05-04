@@ -2,7 +2,7 @@
 # Configuration for DUNE TDR far detector LBL oscillation sensitivity
 #########################################
 
-outputFolder: "./outputs/profiling_root"
+outputFolder: "./outputs/"
 minGundamVersion: 1.9.0
 
 fitterEngineConfig:

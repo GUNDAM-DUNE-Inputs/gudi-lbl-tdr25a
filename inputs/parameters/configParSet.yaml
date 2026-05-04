@@ -6,43 +6,67 @@
   isEnabled: true
   enableThrowToyParameters: false
   nominalStepSize: 1.0
+  parameterDefinitionFilePath: "./inputs/parameters/oscProb/oscCovTDR_NO.root"
+  covarianceMatrix: osc_param_cov
+  parameterNameList: osc_param_names
+  parameterPriorValueList: osc_param_priors
+
   parameterDefinitions:
     - name: "PMNS_SIN_SQUARED_12"
       isEnabled: true
       priorValue: 0.310 # PDG quotes 0.307
-      priorType: Flat
-      parameterLimits: [ 0.25, 0.37 ]
+      parameterStepSize: 0.01
+      #priorType: Flat
+      physicalLimits: [ 0.0, 1.0]
+      parameterLimits: [ 0.0, 1.0]      #parameterLimits: [ 0.25, 0.37 ]
 
     - name: "PMNS_SIN_SQUARED_13"
       isEnabled: true
       priorValue: 0.0224 # PDG quotes 0.0219
-      priorType: Flat
-      parameterLimits: [ 0.018, 0.034 ]
+      parameterStepSize: 0.0007
+      #priorType: Flat
+      physicalLimits: [ 0.0, 1.0]
+      parameterLimits: [ 0.0, 1.0 ]
+      #parameterLimits: [ 0.018, 0.034 ]
 
     - name: "PMNS_SIN_SQUARED_23"
       isEnabled: true
       priorValue: 0.582   # PDG quotes 0.558
       priorType: Flat
-      parameterLimits: [ 0.42, 0.62 ]
+      parameterStepSize: 0.04
+      parameterLimits: [ 0.0, 1.0 ]      
+      #parameterLimits: [ 0.42, 0.62 ]
 
     - name: "PMNS_DELTA_MASS_SQUARED_21"
       isEnabled: true
       priorValue: 7.39E-5
-      priorType: Flat
-      parameterLimits: [ 4E-5, 12E-5 ]
+      #priorType: Flat
+      parameterStepSize: 2.0e-6
+      #parameterLimits: [ 6.96E-5, 8.10E-5 ]    # 3 sigma around PDG
+      #parameterLimits: [ 4E-5, 12E-5 ]
 
     - name: "PMNS_DELTA_MASS_SQUARED_32"
       isEnabled: true
       priorValue: 0.002525
       priorType: Flat
-      parameterLimits: [ 2.46e-3, 2.62e-3 ]
+      parameterStepSize: 2.6E-4
+      #parameterLimits: [ 2.46e-3, 2.62e-3 ]
 
     - name: "PMNS_DELTA_CP"
       isEnabled: true
       priorValue: -2.498  # 1.19 pi
       priorType: Flat
-      parameterLimits: [ -3.14, 3.14 ]
+      parameterStepSize: 1.0
+      cyclicRange: [ -3.14159265359, 3.14159265359 ]
 
+    - name: "PMNS_SIGN_MASS_SQUARED_32"
+      isEnabled: true
+      isFixed: true
+      # PDG 2025 value: inverted
+      priorValue: 0.5           # DUNE prior from Nu-Fit 5.2 w/ SK atm
+      priorType: Flat
+      parameterStepSize: 0.5
+      parameterLimits: [ -1.0, 1.0 ]
 
   dialSetDefinitions:
 
@@ -62,6 +86,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated numu to nue NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -69,10 +94,10 @@
         initArguments:
           - "FLUX_FLAVOR muon"              # muon neutrino flux
           - "INTERACTION_FLAVOR electron"   # electron neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -89,6 +114,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated numu to numu NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -96,10 +122,10 @@
         initArguments:
           - "FLUX_FLAVOR muon"          # muon neutrino flux
           - "INTERACTION_FLAVOR muon"   # muon neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -116,6 +142,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated numu to nutau NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -123,10 +150,10 @@
         initArguments:
           - "FLUX_FLAVOR muon"          # muon neutrino flux
           - "INTERACTION_FLAVOR tau"    # tau neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -149,6 +176,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nue to nue NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -156,10 +184,10 @@
         initArguments:
           - "FLUX_FLAVOR electron"          # electron neutrino flux
           - "INTERACTION_FLAVOR electron"   # electron neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -176,6 +204,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nue to numu NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -183,10 +212,10 @@
         initArguments:
           - "FLUX_FLAVOR electron"      # electron neutrino flux
           - "INTERACTION_FLAVOR muon"   # muon neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -203,6 +232,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nue to nutau NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -210,10 +240,10 @@
         initArguments:
           - "FLUX_FLAVOR electron"      # electron neutrino flux
           - "INTERACTION_FLAVOR tau"    # tau neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -236,6 +266,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nutau to nue NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -243,10 +274,10 @@
         initArguments:
           - "FLUX_FLAVOR tau"             # tau neutrino flux
           - "INTERACTION_FLAVOR electron" # electron neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -263,6 +294,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nutau to numu NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -270,10 +302,10 @@
         initArguments:
           - "FLUX_FLAVOR tau"      # tau neutrino flux
           - "INTERACTION_FLAVOR muon"   # muon neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -290,6 +322,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nutau to nutau NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -297,10 +330,10 @@
         initArguments:
           - "FLUX_FLAVOR tau"        # tau neutrino flux
           - "INTERACTION_FLAVOR tau" # tau neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -323,6 +356,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated numu-bar to nue-bar NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -330,10 +364,10 @@
         initArguments:
           - "FLUX_FLAVOR anti-muon"              # muon anti-neutrino flux
           - "INTERACTION_FLAVOR anti-electron"   # electron anti-neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -350,6 +384,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated numu-bar to numu-bar NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -357,10 +392,10 @@
         initArguments:
           - "FLUX_FLAVOR anti-muon"          # muon anti-neutrino flux
           - "INTERACTION_FLAVOR anti-muon"   # muon anti-neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -377,6 +412,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated numu-bar to nutau-bar NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -384,10 +420,10 @@
         initArguments:
           - "FLUX_FLAVOR anti-muon"          # muon anti-neutrino flux
           - "INTERACTION_FLAVOR anti-tau"    # tau anti-neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -410,6 +446,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nue-bar to nue-bar NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -417,10 +454,10 @@
         initArguments:
           - "FLUX_FLAVOR anti-electron"          # electron anti-neutrino flux
           - "INTERACTION_FLAVOR anti-electron"   # electron anti-neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -437,6 +474,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nue-bar to numu-bar NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -444,10 +482,10 @@
         initArguments:
           - "FLUX_FLAVOR anti-electron"      # electron anti-neutrino flux
           - "INTERACTION_FLAVOR anti-muon"   # muon anti-neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -464,6 +502,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nue-bar to nutau-bar NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -471,10 +510,10 @@
         initArguments:
           - "FLUX_FLAVOR anti-electron"      # electron anti-neutrino flux
           - "INTERACTION_FLAVOR anti-tau"    # tau anti-neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -497,6 +536,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nutau-bar to nue-bar NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -504,10 +544,10 @@
         initArguments:
           - "FLUX_FLAVOR anti-tau"             # tau neutrino flux
           - "INTERACTION_FLAVOR anti-electron" # electron neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -524,6 +564,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nutau-bar to numu-bar NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -531,10 +572,10 @@
         initArguments:
           - "FLUX_FLAVOR anti-tau"      # tau neutrino flux
           - "INTERACTION_FLAVOR anti-muon"   # muon neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
@@ -551,6 +592,7 @@
         - name: "PMNS_DELTA_MASS_SQUARED_21"
         - name: "PMNS_DELTA_MASS_SQUARED_32"
         - name: "PMNS_DELTA_CP"
+        - name: "PMNS_SIGN_MASS_SQUARED_32"
       tableConfig:
         name: "Tabulated nutau-bar to nutau-bar NuFASTLinear"  # Must be unique.
         libraryPath: "${NUOSCILLATOR_ROOT}/lib/libTabulatedNuOscillator.so"
@@ -558,10 +600,10 @@
         initArguments:
           - "FLUX_FLAVOR anti-tau"        # tau neutrino flux
           - "INTERACTION_FLAVOR anti-tau" # tau neutrino
-          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP"
+          - "PARAMETERS SS12,SS13,SS23,DM21,DM32,DCP,SIGN32"
           - "PATH 1300.0"
           - "CONFIG ./inputs/parameters/oscProb/GUNDAM_NuFASTLinear.config"
-          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E10000.root"
+          - "BINNING_FILE ./inputs/parameters/oscProb/grid_E1000.root"
           - "BINNING_HIST energyBinning"
         updateFunction: "updateTable"
         binningFunction: "binTable"
