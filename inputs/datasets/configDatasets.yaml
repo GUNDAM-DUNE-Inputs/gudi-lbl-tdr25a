@@ -19,6 +19,9 @@
       - "mode"
       - "isCC"
       - "POTScaledWeight"
+      - "Ev"
+      - "Ev_reco_nue"
+      - "Ev_reco_numu"
 
     # common tree name where the data are stored in each file
     tree: "event_tree"

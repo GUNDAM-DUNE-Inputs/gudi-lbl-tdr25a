@@ -25,7 +25,9 @@ source ${NUOSCILLATOR_ROOT_LIB}/bin/setup.NuOscillator.sh
 
 
 # if you request an Asimov fit, simply disregard the `-d` option, --scan is to build llh scans
-gundamFitter -a -d -c ./config_DUNE.yaml -t 8
+gundamFitter -a -c ./config_DUNE.yaml -t 8
+# To run few files only consider override the parameters config:
+#gundamFitter -a -d -c ./config_DUNE.yaml -t 8 -of overrides/fewfiles.yaml
 # To disable  oscillation parameters consider override the parameters config:
 #gundamFitter -a -d --scan -c ./config_DUNE.yaml -of overrides/disableOscillationParameters.yaml -t 8
 

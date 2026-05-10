@@ -27,6 +27,12 @@ Build profile scans of oscillation parameters using the GUNDAM framework.
    ```
 2. Adjust SLURM directives (e.g. `--time`, `--mem`, `--array`) to match your cluster’s policies.
 
+3. Choose a folder for output files:
+
+```bash
+output_dir="/path/to/your/outputs"
+```
+
 ---
 
 ## 3. Prepare the Parameter Injector
@@ -49,7 +55,7 @@ jobs = N_params × (2 × NUM_SIGMA + 1)
 
 - For 6 parameters and `NUM_SIGMA=2` (5 points each), you need `6 × 5 = 30` jobs.
 
-Create a folder for output files and submit the array:
+Submit the array:
 
 ```bash
 sbatch submit_slurm_profiling_DUNE.sh

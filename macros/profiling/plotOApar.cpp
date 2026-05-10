@@ -131,8 +131,8 @@ int plotOApar() {
   gStyle->SetPadTopMargin(0.06);
   gStyle->SetPadRightMargin(0.08);
 
-  const std::string rootDir = "/gpfs/projects/McGrewGroup/uyevarou/outputs/DUNE/lbl/profiling/output_frozen_TDR/";
-  const std::string pdfOut = "OApar_plots.pdf";
+  const std::string rootDir = "/gpfs/scratch/uyevarouskay/gundam_results/DUNE/lbl/profiling/output_frozen_TDR_inclND/";
+  const std::string pdfOut = "OApar_plots_allFits_inclND.pdf";
   bool opened = false;
 
   const bool kEnableExtrapolation = false;   // OFF: do not extrapolate
@@ -183,7 +183,7 @@ int plotOApar() {
 
     int fitOK = static_cast<int>(leafFit->GetValue(0));
     int covOK = static_cast<int>(leafCov->GetValue(0));
-    if (fitOK != 0 || covOK != 3) { continue; }
+    //if (fitOK != 0 || covOK != 3) { continue; }
 
     double chi2 = leafChi->GetValue(0);
     priormap[param].push_back(prior);
