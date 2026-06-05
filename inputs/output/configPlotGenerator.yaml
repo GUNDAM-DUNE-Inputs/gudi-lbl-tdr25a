@@ -11,14 +11,12 @@ histogramsDefinition:
   - varToPlot: "Ev_reco_nue"
     splitVars: ["", "mode"]
     useSampleBinning: true
-    sampleVariableIfNotAvailable: ["Ev_reco_numu"]
     xTitle: "Reconstructed neutrino energy (GeV)"
     yTitle: "Counts"
 
   - varToPlot: "Ev_reco_numu"
     splitVars: ["", "mode"]
     useSampleBinning: true
-    sampleVariableIfNotAvailable: ["Ev_reco_nue"]
     xTitle: "Reconstructed neutrino energy (GeV)"
     yTitle: "Counts"
   
