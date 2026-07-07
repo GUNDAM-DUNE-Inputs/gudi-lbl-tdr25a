@@ -1,10 +1,9 @@
 
 varDictionaries:
-  - name: "ReactionCode"
+  - name: "mode"
     dictionary: "./inputs/output/dictionaries/ReactionCodesDict.yaml"
 
 histogramsDefinition:
-  - varToPlot: "Raw"
 
   - varToPlot: "Raw"
     splitVars: ["", "mode"]

@@ -19,6 +19,9 @@
       - "mode"
       - "isCC"
       - "POTScaledWeight"
+      - "Ev"
+      - "Ev_reco_nue"
+      - "Ev_reco_numu"
 
     # common tree name where the data are stored in each file
     tree: "event_tree"
@@ -78,7 +81,6 @@
 
     # base weight
     nominalWeightFormula:
-      # - "((isCC!=0||isNC!=0)&&(SwapType==1))? POTScaledWeight : 0.0"
       - "(isCC!=0||isNC!=0)? POTScaledWeight : 0.0"
       - "BeRPA_A_cvwgt"
 
@@ -174,8 +176,3 @@
       nominalWeightFormula:
         - "(isCC!=0||isNC!=0)? POTScaledWeight : 0.0"
         - "BeRPA_A_cvwgt"
-        
-      # additionalWeightFormula:
-      #   - "mode"
-      #   - "POTScaledWeight"
-      #   - "SwapType"

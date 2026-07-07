@@ -3,7 +3,7 @@
 * **On NN home:**
 
   ```bash
-  export OA_INPUT_FOLDER=/storage/shared/DUNE/OA-inputs/lbl/gudi-inputs/v5/
+  export OA_INPUT_FOLDER=/gpfs/projects/McGrewGroup/uyevarou/gudi-inputs/lbl/v5/
   ```
 
 * **On dunegpvm:**
@@ -60,6 +60,16 @@ git submodule update
 Alternatively you can build manually. If needed, configure `./gundamOscAnaTools/resources/TabulateNuOscillator/CMakeLists.txt` and compile by using:
 
 ```bash
+# before compiling source gundam
+source yourpath/gundam/install/setup.sh
+# if there are no GPUs modify ./gundamOscAnaTools/resources/TabulateNuOscillator/CMakeLists.txt replace:
+#-set(UseProbGPULinear 1 CACHE STRING  "NuOscillator Option -- Enable ProbGPULinear")
+#+set(UseProbGPULinear 0 CACHE STRING  "NuOscillator Option -- Enable ProbGPULinear")
+# if the compilation fails add: 
+#+target_link_libraries(dumpAtmOscProb PRIVATE ${CMAKE_DL_LIBS})
+#+target_link_libraries(dumpLblOscProb PRIVATE ${CMAKE_DL_LIBS})
+#+target_link_libraries(testTabulatedNuOscillator PRIVATE ${CMAKE_DL_LIBS})
+
 cd ./gundamOscAnaTools/resources/TabulateNuOscillator/
 mkdir build-$(uname -m)
 cd build-$(uname -m)
